@@ -310,7 +310,7 @@
 
 	  p.stuff-p {
 		  font-family: Montserrat;
-		  font-size: 1.5vw;
+		  font-size: 20pt;
 		  text-align: center;
 		  padding: 10px;
 	  }
@@ -418,11 +418,16 @@
 		window.addEventListener('DOMContentLoaded', (event) => {
 			const hi = document.querySelector('.center-div')
 			const ok = document.querySelector('.hi')
-			window.onscroll = function() {
+			if (isElementInViewport(hi)) {
+					hi.classList.add("animating");
+				} else {
+				window.onscroll = function() {
 				if (isElementInViewport(hi)) {
 					hi.classList.add("animating");
 				}
 			}
+			}
+
 		});
 
 	</script>
