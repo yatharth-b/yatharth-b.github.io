@@ -98,8 +98,8 @@
 	  }
 	
 	  .animating {
-          transform:  translateY(0);
-		  opacity: 100%;
+          transform:  translateY(0) !important;
+		  opacity: 100% !important;
       }
 
 		.center-div{
@@ -138,14 +138,15 @@
 		font-size: 55pt;
 		padding-top: 100px;
 		padding-bottom: 100px ;
+		transition: 1s ease-in-out;
+			transform:  translateY(90px);
+			opacity: 0%;
 	  }
 
 	  .stuff {
 		  margin-left: 12%;
 		  padding-bottom: 20vh;
-		  transition: 1s ease-in-out;
-			transform:  translateY(90px);
-			opacity: 0%;
+
 	  }
 
 	  .idk {
@@ -158,38 +159,6 @@
 		display: grid;
 		grid-template-columns: auto auto;
 	  }
-	  @keyframes border {
-		0% {
-			background-size:    0 3px,
-								3px 0,
-								0 3px,
-								3px 0;
-		}
-		25% {
-			background-size:    100% 3px,
-								3px 0,
-								0 3px,
-								3px 0;
-		}
-		50% {
-			background-size:    100% 3px,
-								3px 100%,
-								0 3px,
-								3px 0;
-		}
-		75% {
-			background-size:    100% 3px,
-								3px 100%,
-								100% 3px,
-								3px 0;
-		}
-		100% {
-			background-size:    100% 3px,
-								3px 100%,
-								100% 3px,
-								3px 100%;
-		}
-	}
 
 	.programming-card {
 		width: 33vw;
@@ -233,7 +202,7 @@
 	  .mineman {
 		  position: absolute;
 		  left: 7%;
-		top: 20%;
+		top: 10%;
 		width: 524px;
 		height: 366px;
 		z-index: 3;
@@ -298,9 +267,6 @@
 		  height: auto;
 		  background-color: black;
 		  position: absolute;
-		  transition: 1s ease-in-out;
-			transform:  translateY(90px);
-			opacity: 0%;
 
 	  }
 
@@ -310,6 +276,9 @@
 		  font-size: 50pt;
 		  margin-left: 7vw;
 		  margin-top: 5vw;
+		  transition: 1s ease-in-out;
+			transform:  translateY(90px);
+			opacity: 0%;
 	  }
 
 	  p.contact-p {
@@ -317,6 +286,9 @@
 		  font-weight: 300;
 		  color: white;
 		  margin-left: 7vw;
+		  transition: 1s ease-in-out;
+			transform:  translateY(90px);
+			opacity: 0%;
 	  }
 
 	  .icon {
@@ -345,6 +317,9 @@
 	  .social-logos {
 		  margin-left: 7vw;
 		  display: flex;
+		  transition: 1s ease-in-out;
+			transform:  translateY(90px);
+			opacity: 0%;
 	  }
 
 	  .stuff-icon {
@@ -374,7 +349,7 @@
 
 			window.onmousemove = function (e) {
 				var x = e.clientX, y = e.clientY;
-				mineman.style.top = String(20 + y/window.innerHeight * 5) + '%';
+				mineman.style.top = String(10 + y/window.innerHeight * 5) + '%';
 				mineman.style.left = String(6 + x/window.innerWidth * 1) + '%';
 				keyboard.style.top = String(80 - y/window.innerHeight * 5) + 'vh';
 				keyboard.style.left = String(50 - x/window.innerWidth * 1) + 'vw';
@@ -405,9 +380,16 @@
 			const stuff_heading = document.querySelector(".heading-stuff")
 			const stuff = document.querySelector(".stuff")
 			const work = document.querySelector(".work-experience")
+			const contact_heading = document.querySelector('.contact-heading')
+			const cont_p = document.querySelector("p.contact-p")
+			const social_logos = document.querySelector(".social-logos")
+			// const card1 = document.getElementsByClassName(".programming-card 1")
+			// const card2 = document.getElementsByClassName(".programming-card 2")
+			// const card3 = document.getElementsByClassName(".programming-card 3")
+			// const card4 = document.getElementsByClassName(".programming-card 4")
 
 			function animateElementIfNeeded() {
-				[h1, stuff_heading, work].forEach((x) => isElementInViewport(x) && x.classList.add("animating"));
+				[h1, stuff_heading, work, contact_heading, cont_p, social_logos].forEach((x) => isElementInViewport(x) && x.classList.add("animating"));
 			}
 
 			animateElementIfNeeded();
@@ -438,13 +420,13 @@
 		<div class="stuff">
 			<h1 class="heading-stuff">Stuff I'm Passionate About</h1>
 			<div class="grid-container">
-				<div class="programming-card">
+				<div class="programming-card 1">
 					<video src="images/prog.m4v" class="prog-vid" autoplay loop></video>
 					<div class ="stuff-sub-heading">Programming</div>
 					<p class="stuff-p">I began programming in May 2019. I spend most of my time programming; Python is my favorite language. Check out my Github!</p>
 					<a href="https://github.com/Protart"><img src="images/github.png" class="stuff-icon"></a>
 				</div>
-				<div class="programming-card">
+				<div class="programming-card 2">
 					<video src="images/vid-ed.m4v" class="prog-vid" autoplay loop></video>
 					<div class="negative-shift">
 						<div class ="stuff-sub-heading">Video Editing</div>
@@ -452,12 +434,12 @@
 						<a href="https://www.youtube.com/channel/UCv2zpK7hW0oNvyUuS-ImWYg?view_as=subscriber"><img src="images/yt.png" class="stuff-icon"></a>
 					</div>
 				</div>
-				<div class="programming-card">
+				<div class="programming-card 3">
 					<video src="images/tennis-vid.m4v" class="prog-vid" autoplay loop></video>
 					<div class ="stuff-sub-heading">Tennis</div>
 					<p class="stuff-p">I began playing tennis when i was 10, over the years I've participated in several school, state and national(open) level tournaments. I'm currently among the top 20 ranks in men's category in MP. </p>
 				</div>
-				<div class="programming-card">
+				<div class="programming-card 4">
 					<video src="images/test.m4v" class="prog-vid" autoplay loop></video>
 					<div class ="stuff-sub-heading">Designing</div>
 					<p class="stuff-p">I like doing digital art, 3d modeling and graphic designing in my spare time. I'm proficient at using Blender, Photoshop, and Illustrator. I occasionally post my work on Instagram. Check it out!</p>
