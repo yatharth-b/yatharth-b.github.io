@@ -1,0 +1,517 @@
+<html>
+  <head>
+    <title>Yatharth</title>
+    <style>
+		body {
+			margin: 0;
+			overflow-x: hidden;
+			scrollbar-width: thin;
+			background-color: #262525;
+		}
+
+		html {
+			--scrollbarBG: white;
+			--thumbBG: #262525;
+			-webkit-user-select: none;
+			-khtml-user-select: none;
+			-moz-user-select: none;
+			-ms-user-select: none;
+			-o-user-select: none;
+			user-select: none;
+		}
+		body::-webkit-scrollbar {
+		width: 11px;
+		}
+		body {
+		scrollbar-width: thin;
+		scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+		}
+		body::-webkit-scrollbar-track {
+		background: var(--scrollbarBG);
+		}
+		body::-webkit-scrollbar-thumb {
+		background-color: var(--thumbBG) ;
+		border-radius: 6px;
+		border: 3px solid var(--scrollbarBG);
+		}
+      .home {
+		  width: 100vw;
+		  height: 100vh;
+		  background-color: rgb(16, 18, 19);
+		  display:flex;
+		align-items:center;
+		justify-content:center;
+	  }
+
+	  @keyframes home-heading {
+		0% {transform: scale(1, 1);}
+		50% {transform: scale(1.1, 1.1);}
+		100% {transform: scale(1, 1);}
+
+	  }
+	  .huge-heading {
+		  font-family: Montserrat Black;
+		  background-color: rgb(16, 18, 19);
+		  color: white;
+		  text-align: center;
+		  font-size: 10vw;
+		  margin: 0;
+		  top: 50vh;
+		  animation-name: home-heading;
+		  animation-duration: 4s;
+		  animation-iteration-count: infinite;
+	  }
+
+	  p {
+		  font-family: Montserrat Medium;
+		  color: rgb(196, 191, 181);
+		  font-size: 30pt;
+	  }
+
+	  .headings {
+		  font-family: Montserrat ExtraBold;
+		  color: #b7ff00;
+		  font-size: 45pt;
+
+	  }
+	  
+	  .sub-headings {
+		font-family: Montserrat SemiBold;
+		color: rgb(199, 195, 184);
+		font-size: 38pt;
+	  }
+
+	  .hi {
+		  background-color: #262525;
+		  top: 20%;
+		  width: 100vw;
+		  height: 100vh;
+		  padding-bottom: 200px;
+		  display: table-cell;
+		  vertical-align: middle;
+		 
+	  }
+	
+	  .center-div.animating {
+          transform:  translateY(0);
+		  opacity: 100%;
+      }
+
+		.center-div{
+			transition: 1s ease-in-out;
+			transform:  translateY(90px);
+			opacity: 0%;
+		}
+
+	  .heading-hi {
+		font-family: Montserrat ExtraBold;
+		color: #b7ff00;
+		font-size: 45pt;
+		margin-left: 12%;
+	  }
+
+	  .p-hi {
+		font-family: Montserrat Medium;
+		color: rgb(196, 191, 181);
+		font-size: 30pt;
+		margin-left: 12%;
+		width: 80%;
+	  }
+
+	  .bgwrapper {
+		  background-color: rgb(16, 18, 19);
+		  width: 100vw;
+		  height: auto;
+	  }
+
+	  .heading-stuff{
+		font-family: Montserrat ExtraBold;
+		color: #b7ff00;
+		font-size: 55pt;
+		padding-top: 100px;
+		padding-bottom: 100px ;
+	  }
+
+	  .stuff {
+		  margin-left: 12%;
+		  padding-bottom: 20vh;
+	  }
+
+	  .idk {
+		  width: 300px;
+		  height: auto;
+		  float: right;
+	  }
+
+	  .grid-container {
+		display: grid;
+		grid-template-columns: auto auto;
+	  }
+	  @keyframes border {
+		0% {
+			background-size:    0 3px,
+								3px 0,
+								0 3px,
+								3px 0;
+		}
+		25% {
+			background-size:    100% 3px,
+								3px 0,
+								0 3px,
+								3px 0;
+		}
+		50% {
+			background-size:    100% 3px,
+								3px 100%,
+								0 3px,
+								3px 0;
+		}
+		75% {
+			background-size:    100% 3px,
+								3px 100%,
+								100% 3px,
+								3px 0;
+		}
+		100% {
+			background-size:    100% 3px,
+								3px 100%,
+								100% 3px,
+								3px 100%;
+		}
+	}
+
+	.programming-card {
+		width: 33vw;
+		margin-bottom: 50px;
+		height: auto;
+	}
+
+	  .work-experience {
+		  width: 80%;
+		  margin-left: 12%;
+	  }
+
+	  .light {
+		  font-family: Montserrat ExtraLight;
+		  color: #b7ff00;	
+	  }
+
+	  .green {
+		  color: #b7ff00;
+		  font-family: Montserrat Medium;
+	  }
+	  .fullscreen-wrapper {
+		  width: 100vw;
+		  height: 100vh;
+		  display: table-cell;
+		  vertical-align: middle;
+
+	  }
+
+		@keyframes default-mineman {
+			0% {transform: rotate(5deg);}
+			50% {transform: rotate(0deg);}
+			100% {transform: rotate(5deg);}
+		}	
+
+	  .mineman {
+		  position: absolute;
+		  left: 7%;
+		top: 20%;
+		width: 524px;
+		height: 366px;
+		z-index: 3;
+		animation-name: default-mineman;
+		animation-duration: 4s;
+		animation-iteration-count:infinite;
+	  }
+
+	  @keyframes default-keyboard {
+		0% {transform: rotate(-5deg);}
+		50% {transform: rotate(0deg);}
+		100% {transform: rotate(-5deg);}	  
+	  }
+	  .keyboard {
+		  position: absolute;
+		  left: 50vw;
+			top: 80vh;
+			width: 347px;
+			height: 156px;
+			z-index: 5;
+
+		animation-name: default-mineman;
+		animation-duration: 4s;
+		animation-iteration-count:infinite;
+	  }
+
+	  .racket {
+		  position: absolute;
+		  position: absolute;
+			left: 75%;
+			top: 45%;
+			width: 196px;
+			height: 234px;
+			z-index: 4;
+			animation-name: default-mineman;
+		animation-duration: 4s;
+		animation-iteration-count:infinite;
+	  }
+
+	  .prog-vid {
+		  width: 33vw;
+		  height: auto;
+		  transform: scale(0.5, 0.5);
+	  }
+	
+	  .reel {
+		  width: 18.5vw;
+		  height: 18.5vw;
+		  position: absolute;
+		
+
+	  }
+
+	  @keyframes reel-anim {
+		  from {transform: rotate(0deg);}
+		  to {transform: rotate(20deg);}
+		  
+	  }
+
+	  .reel:hover {
+		  animation-name: reel-anim;
+		  animation-duration: 3s;
+	  }
+
+	  .tape {
+		  width: 18.5vw;
+		  height: 18.5vw;
+		  padding: 0;
+		  margin-left: 4vw;
+
+	  }
+
+	  .stuff-sub-heading {
+		font-family: Montserrat ExtraBold;
+		color: rgb(196, 191, 181);
+		font-size: 3vw;
+		text-align: center;
+	  }
+
+	  p.stuff-p {
+		  font-family: Montserrat;
+		  font-size: 1.5vw;
+		  text-align: center;
+		  padding: 10px;
+	  }
+
+	  .stuff-button {
+		font-family: Montserrat ExtraBold;
+		color: rgb(196, 191, 181);
+		font-size: 2vw;
+		text-align: center;
+
+		background-repeat: no-repeat;
+		background-image:   linear-gradient(to right, #C9C9C9 100%, #C9C9C9 100%),
+							linear-gradient(to bottom, #C9C9C9 100%, #C9C9C9 100%),
+							linear-gradient(to right, #C9C9C9 100%, #C9C9C9 100%),
+							linear-gradient(to bottom, #C9C9C9 100%, #C9C9C9 100%);
+		background-size:    100% 3px,
+							3px 100%,
+							100% 3px,
+							3px 100%;
+		background-position:    0 0,
+								100% 0,
+								100% 100%,
+								0 100%;
+		animation: border 1.25s cubic-bezier(0.19, 1, 0.22, 1) 1;
+		animation-play-state: paused;
+
+	  }
+	  .stuff-button:hover {
+		animation-play-state: running;
+	}
+
+	  .contact {
+		  width: 100vw;
+		  height: auto;
+		  background-color: black;
+		  position: absolute;
+	  }
+
+	  .contact-heading {
+		  font-family: Montserrat;
+		  color: white;
+		  font-size: 50pt;
+		  margin-left: 7vw;
+		  margin-top: 5vw;
+	  }
+
+	  p.contact-p {
+		  font-family: Montserrat Light;
+		  color: white;
+		  margin-left: 7vw;
+	  }
+
+	  .icon {
+		  width: 40px;
+		  height: auto;
+		  padding: 5px;
+		  opacity: 50%;
+	  }
+
+	  .icon:hover {
+		transition: 0.2s linear ;
+
+		padding: 5px;
+		opacity: 100%;  
+	  }
+	  .footer {
+		  font-family: Montserrat Light;
+		  color: white;
+		  font-size: 25pt;
+		  text-align: center;
+		  padding-top: 150px;
+		  padding-bottom: 50px;
+	  }
+
+	  .social-logos {
+		  margin-left: 7vw;
+		  display: flex;
+	  }
+
+	  .stuff-icon {
+		  width: 40px;
+		  height: auto;
+		  padding: 5px;
+		  opacity: 50%;
+		  margin-left: 45%;
+	  }
+
+	  .stuff-icon:hover {
+		transition: 0.2s linear ;
+
+		padding: 5px;
+		opacity: 100%;  
+	  }
+
+	</style>
+	
+  </head>
+  <body>
+	<script>
+		window.addEventListener('DOMContentLoaded', (event) => {
+			var mineman = document.querySelector('.mineman');
+			var keyboard = document.querySelector('.keyboard');
+			var racket = document.querySelector('.racket');
+
+			window.onmousemove = function (e) {
+				var x = e.clientX, y = e.clientY;
+				mineman.style.top = String(20 + y/window.innerHeight * 5) + '%';
+				mineman.style.left = String(6 + x/window.innerWidth * 1) + '%';
+				keyboard.style.top = String(80 - y/window.innerHeight * 5) + 'vh';
+				keyboard.style.left = String(50 - x/window.innerWidth * 1) + 'vw';
+				racket.style.top = String(45 - y/window.innerHeight * 4) + 'vh';
+				racket.style.left = String(75 - x/window.innerWidth * 1.2) + 'vw';
+				
+			};
+
+		});
+
+	</script>
+	<script>
+		function isElementInViewport (el) {
+			var rect = el.getBoundingClientRect();
+			return (
+				rect.top >= 0 &&
+				rect.left >= 0 &&
+				rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+				rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+			);
+		}
+
+		window.addEventListener('DOMContentLoaded', (event) => {
+			const hi = document.querySelector('.center-div')
+			const ok = document.querySelector('.hi')
+			window.onscroll = function() {
+				if (isElementInViewport(hi)) {
+					hi.classList.add("animating");
+				}
+			}
+		});
+
+	</script>
+	<div class="home">
+		<img src="images/mineman.png" class="mineman">
+		<img src="images/racket.png" class="racket">
+		<img src="images/keyboard.png" class="keyboard">
+		<div class="huge-heading">YATHARTH</div>
+	</div>
+	<div class="hi">
+		<div class="center-div">
+			<h1 class="heading-hi">Hi !</h1>
+			<p class="p-hi">
+				<img src="images/idk.png" class="idk"></img>
+				I’m <span class="green">Yatharth Bhargava</span>, a 16yr old programmer, designer, video editor, tennis player,gamer and meme lord.
+				The internet knows me as <span class="green">Protart</span>.
+			</p>
+		</div>
+	</div>
+	<div class="bgwrapper">
+		<div class="stuff">
+			<h1 class="heading-stuff">Stuff I'm Passionate About</h1>
+			<div class="grid-container">
+				<div class="programming-card">
+					<video src="images/prog.m4v" class="prog-vid" autoplay loop></video>
+					<div class ="stuff-sub-heading">Programming</div>
+					<p class="stuff-p">I began programming in May 2019. I spend most of my time programming; Python is my favorite language. Check out my Github!</p>
+					<a href="https://github.com/Protart"><img src="images/github.png" class="stuff-icon"></a>
+				</div>
+				<div class="programming-card">
+					<video src="images/vid-ed.m4v" class="prog-vid" autoplay loop></video>
+					<div class="negative-shift">
+						<div class ="stuff-sub-heading">Video Editing</div>
+						<p class="stuff-p">I started learning video editing 3 years ago, since then I've edited many videos for my school. I occasionally upload videos on my Youtube channel, Here's some of my work.</p>
+						<a href="https://www.youtube.com/channel/UCv2zpK7hW0oNvyUuS-ImWYg?view_as=subscriber"><img src="images/yt.png" class="stuff-icon"></a>
+					</div>
+				</div>
+				<div class="programming-card">
+					<video src="images/tennis-vid.m4v" class="prog-vid" autoplay loop></video>
+					<div class ="stuff-sub-heading">Tennis</div>
+					<p class="stuff-p">I began playing tennis when i was 10, over the years I've participated in several school, state and national(open) level tournaments. I'm currently among the top 20 ranks in men's category in MP. </p>
+				</div>
+				<div class="programming-card">
+					<video src="images/test.m4v" class="prog-vid" autoplay loop></video>
+					<div class ="stuff-sub-heading">Designing</div>
+					<p class="stuff-p">I like doing digital art, 3d modeling and graphic designing in my spare time. I'm proficient at using Blender, Photoshop, and Illustrator. I occasionally post my work on Instagram. Check it out!</p>
+					<a href="https://instagram.com/yatharth._.2"><img src="images/instagram.png" class="stuff-icon"></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="fullscreen-wrapper">
+		<div class="work-experience">
+			<h1 class="headings">Work Experience</h1>
+			<p>I don’t have much proffesional experience but I’ve worked on some big projects with my friends.</p>
+			<h2 class="sub-headings"><a class="sub-headings" href="http://technocon.xyz/team">Technocon </a><span class="light">Head of Design</span></h2>
+			<p>2019-present	</p>
+			<h2 class="sub-headings"><a class="sub-headings" href="https://halocrypt.com/">Halocrypt </a> <span class="light">Designer, Programmer, PR</span></h2>
+			<p>2020-present	</p>
+			<h2 class="sub-headings"><a class="sub-headings" href="https://www.lionsclubs.org/en/discover-our-clubs/about-leos">Club Leo,Indore </a><span class="light">Founding Member</span></h2>
+			<p>2020-present</p>
+		</div>
+	</div>
+	<div class="contact">
+		<div class="contact-heading">Contact</div>
+		<p class="contact-p">I'd love to collaborate or maybe just talk. Hit me up!</p>
+		<div class="social-logos">
+			<li><a href="https://instagram.com/yatharth._.2"><img src="images/instagram.png" class="icon"></a></li>
+			<li><a href="https://github.com/Protart"><img src="images/github.png" class="icon"></a></li>
+			<li><a href="https://www.youtube.com/channel/UCv2zpK7hW0oNvyUuS-ImWYg?view_as=subscriber"><img src="images/yt.png" class="icon"></a></li>
+			<li><a href="https://instagram.com/yatharth._.2"><img src="images/in.png" class="icon"></a></li>
+
+		</div>
+		<div class="footer">Made with &#x2615; &#x2615; &#x2615; by <span class="green">Protart</span></div>
+
+	</div>
+  </body>
+</html>
