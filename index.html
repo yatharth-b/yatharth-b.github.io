@@ -97,7 +97,7 @@
 		 
 	  }
 	
-	  .center-div.animating {
+	  .animating {
           transform:  translateY(0);
 		  opacity: 100%;
       }
@@ -143,6 +143,9 @@
 	  .stuff {
 		  margin-left: 12%;
 		  padding-bottom: 20vh;
+		  transition: 1s ease-in-out;
+			transform:  translateY(90px);
+			opacity: 0%;
 	  }
 
 	  .idk {
@@ -197,6 +200,9 @@
 	  .work-experience {
 		  width: 80%;
 		  margin-left: 12%;
+		  transition: 1s ease-in-out;
+			transform:  translateY(90px);
+			opacity: 0%;
 	  }
 
 	  .light {
@@ -292,6 +298,10 @@
 		  height: auto;
 		  background-color: black;
 		  position: absolute;
+		  transition: 1s ease-in-out;
+			transform:  translateY(90px);
+			opacity: 0%;
+
 	  }
 
 	  .contact-heading {
@@ -389,19 +399,22 @@
 			return (vertInView && horInView);
 		}
 
-		window.addEventListener('DOMContentLoaded', (event) => {
-			const hi = document.querySelector('.center-div')
-			const ok = document.querySelector('.hi')
-			if (isElementInViewport(hi)) {
-					hi.classList.add("animating");
-				} else {
-				window.onscroll = function() {
-				if (isElementInViewport(hi)) {
-					hi.classList.add("animating");
-				}
-			}
+		window.addEventListener("DOMContentLoaded", (event) => {
+			const h1 = document.querySelector(".center-div");
+			const ok = document.querySelector(".hi");
+			const stuff_heading = document.querySelector(".heading-stuff")
+			const stuff = document.querySelector(".stuff")
+			const work = document.querySelector(".work-experience")
+
+			function animateElementIfNeeded() {
+				[h1, stuff_heading, work].forEach((x) => isElementInViewport(x) && x.classList.add("animating"));
 			}
 
+			animateElementIfNeeded();
+
+			window.onscroll = () => {
+				animateElementIfNeeded();
+			};
 		});
 
 	</script>
