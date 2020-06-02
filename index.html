@@ -388,6 +388,22 @@
 			const social_logos = document.querySelector(".social-logos")
 			const card = document.querySelector(".grid-container")
 
+			var figure = document.getElementsByClassName("programming-card");
+			var vid = document.getElementsByTagName("video");
+
+			[].forEach.call(figure, function (item,index) {
+				item.addEventListener('mouseover', hoverVideo.bind(item,index), false);
+				item.addEventListener('mouseout', hideVideo.bind(item,index), false);
+			});
+
+			function hoverVideo(index, e) {
+				vid[index].play(); 
+			}
+
+			function hideVideo(index, e) {
+				vid[index].pause(); 
+			}
+
 			function animateElementIfNeeded() {
 				[h1, stuff_heading, work, contact_heading, cont_p, social_logos, card].forEach((x) => isElementInViewport(x) && x.classList.add("animating"));
 			}
@@ -421,13 +437,13 @@
 			<h1 class="heading-stuff">Stuff I'm Passionate About</h1>
 			<div class="grid-container">
 				<div class="programming-card">
-					<video src="images/prog.m4v" class="prog-vid" autoplay loop></video>
+					<video src="images/prog.m4v" class="prog-vid"></video>
 					<div class ="stuff-sub-heading">Programming</div>
-					<p class="stuff-p">I began programming in May 2019. I spend most of my time programming; Python is my favorite language. Check out my Github!</p>
+					<p class="stuff-p">I began programming in May 2019. I spend most of my time programming; Python is my favorite language. Check out my Github!</p><br>
 					<a href="https://github.com/Protart"><img src="images/github.png" class="stuff-icon"></a>
 				</div>
 				<div class="programming-card">
-					<video src="images/vid-ed.m4v" class="prog-vid" autoplay loop></video>
+					<video src="images/vid-ed.m4v" class="prog-vid"></video>
 					<div class="negative-shift">
 						<div class ="stuff-sub-heading">Video Editing</div>
 						<p class="stuff-p">I started learning video editing 3 years ago, since then I've edited many videos for my school. I occasionally upload videos on my Youtube channel, here's some of my work.</p>
@@ -435,7 +451,7 @@
 					</div>
 				</div>
 				<div class="programming-card">
-					<video src="images/tennis-vid.m4v" class="prog-vid" autoplay loop></video>
+					<video src="images/tennis-vid.m4v" class="prog-vid"></video>
 					<div class ="stuff-sub-heading">Tennis</div>
 					<p class="stuff-p">I began playing tennis when i was 10, over the years I've participated in several school, state and national(open) level tournaments. I'm currently among the top 20 ranks in men's category in MP. </p>
 				</div>
