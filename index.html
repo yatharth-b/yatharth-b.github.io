@@ -158,6 +158,9 @@
 	  .grid-container {
 		display: grid;
 		grid-template-columns: auto auto;
+		transition: 1s ease-in-out;
+			transform:  translateY(90px);
+			opacity: 0%;
 	  }
 
 	.programming-card {
@@ -383,13 +386,10 @@
 			const contact_heading = document.querySelector('.contact-heading')
 			const cont_p = document.querySelector("p.contact-p")
 			const social_logos = document.querySelector(".social-logos")
-			// const card1 = document.getElementsByClassName(".programming-card 1")
-			// const card2 = document.getElementsByClassName(".programming-card 2")
-			// const card3 = document.getElementsByClassName(".programming-card 3")
-			// const card4 = document.getElementsByClassName(".programming-card 4")
+			const card = document.querySelector(".grid-container")
 
 			function animateElementIfNeeded() {
-				[h1, stuff_heading, work, contact_heading, cont_p, social_logos].forEach((x) => isElementInViewport(x) && x.classList.add("animating"));
+				[h1, stuff_heading, work, contact_heading, cont_p, social_logos, card].forEach((x) => isElementInViewport(x) && x.classList.add("animating"));
 			}
 
 			animateElementIfNeeded();
@@ -420,13 +420,13 @@
 		<div class="stuff">
 			<h1 class="heading-stuff">Stuff I'm Passionate About</h1>
 			<div class="grid-container">
-				<div class="programming-card 1">
+				<div class="programming-card">
 					<video src="images/prog.m4v" class="prog-vid" autoplay loop></video>
 					<div class ="stuff-sub-heading">Programming</div>
 					<p class="stuff-p">I began programming in May 2019. I spend most of my time programming; Python is my favorite language. Check out my Github!</p>
 					<a href="https://github.com/Protart"><img src="images/github.png" class="stuff-icon"></a>
 				</div>
-				<div class="programming-card 2">
+				<div class="programming-card">
 					<video src="images/vid-ed.m4v" class="prog-vid" autoplay loop></video>
 					<div class="negative-shift">
 						<div class ="stuff-sub-heading">Video Editing</div>
@@ -434,12 +434,12 @@
 						<a href="https://www.youtube.com/channel/UCv2zpK7hW0oNvyUuS-ImWYg?view_as=subscriber"><img src="images/yt.png" class="stuff-icon"></a>
 					</div>
 				</div>
-				<div class="programming-card 3">
+				<div class="programming-card">
 					<video src="images/tennis-vid.m4v" class="prog-vid" autoplay loop></video>
 					<div class ="stuff-sub-heading">Tennis</div>
 					<p class="stuff-p">I began playing tennis when i was 10, over the years I've participated in several school, state and national(open) level tournaments. I'm currently among the top 20 ranks in men's category in MP. </p>
 				</div>
-				<div class="programming-card 4">
+				<div class="programming-card">
 					<video src="images/test.m4v" class="prog-vid" autoplay loop></video>
 					<div class ="stuff-sub-heading">Designing</div>
 					<p class="stuff-p">I like doing digital art, 3d modeling and graphic designing in my spare time. I'm proficient at using Blender, Photoshop, and Illustrator. I occasionally post my work on Instagram. Check it out!</p>
